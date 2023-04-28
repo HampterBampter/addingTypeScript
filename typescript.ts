@@ -1,7 +1,7 @@
 const hands = ['rock', 'paper', 'scissors'];
 function getHand(): string{
-
-    return hands[(Math.random() * 10) % 3]
+    let hand = parseInt((Math.random() *10).toString()) % 3
+    return hands[hand]
 };
 interface Player {
     name: string,
