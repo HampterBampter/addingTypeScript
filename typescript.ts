@@ -80,26 +80,16 @@ function playTournament(player1:Player, player2:Player, player3:Player, player4:
     let champion = playGame(finalist1, finalist2, playUntil);
     console.log(`${champion.name} is the world champion!`)
 
-    let scoreP1:HTMLElement | null  = document.getElementById('scoreP1');
-    let scoreP2:HTMLElement | null  = document.getElementById('scoreP2');
-    let scoreP3:HTMLElement | null  = document.getElementById('scoreP3');
-    let scoreP4:HTMLElement | null  = document.getElementById('scoreP4');
-    if(scoreP1){
+    let scoreP1 = document.getElementById('scoreP1')as HTMLElement;
+    let scoreP2 = document.getElementById('scoreP2')as HTMLElement;
+    let scoreP3 = document.getElementById('scoreP3')as HTMLElement;
+    let scoreP4 = document.getElementById('scoreP4')as HTMLElement;
     scoreP1.innerHTML = (`Games won:${player1.wins}`);
-    }
-    if(scoreP2){
     scoreP2.innerHTML = (`Games won:${player2.wins}`);
-}
-    if(scoreP3){
     scoreP3.innerHTML = (`Games won:${player3.wins}`);
-}
-    if(scoreP4){
     scoreP4.innerHTML = (`Games won:${player4.wins}`);
-}
-    let worldChamp:HTMLElement | null = document.getElementById('worldChamp');
-    if(worldChamp){
+    let worldChamp = document.getElementById('worldChamp')as HTMLElement;
     worldChamp.innerHTML = (`${champion.name} is the world champion!`);
-    }
     return champion;
 }
 
@@ -108,10 +98,9 @@ player2.name = 'Glam Sally';
 player3.name = 'Sweeaboo';
 player4.name = 'Monito';
 
-let buttonPlay:HTMLElement | null = document.getElementById('buttonPlay');
-if(buttonPlay){
+let buttonPlay = document.getElementById('buttonPlay')as HTMLElement;
 buttonPlay.style.height = '35px';
 buttonPlay.style.width = '125px';
 buttonPlay.addEventListener('click', function () {
     playTournament(player1, player2, player3, player4, 5)
-})};
+});

@@ -70,22 +70,12 @@ function playTournament(player1, player2, player3, player4, playUntil) {
     let scoreP2 = document.getElementById('scoreP2');
     let scoreP3 = document.getElementById('scoreP3');
     let scoreP4 = document.getElementById('scoreP4');
-    if (scoreP1) {
-        scoreP1.innerHTML = (`Games won:${player1.wins}`);
-    }
-    if (scoreP2) {
-        scoreP2.innerHTML = (`Games won:${player2.wins}`);
-    }
-    if (scoreP3) {
-        scoreP3.innerHTML = (`Games won:${player3.wins}`);
-    }
-    if (scoreP4) {
-        scoreP4.innerHTML = (`Games won:${player4.wins}`);
-    }
+    scoreP1.innerHTML = (`Games won:${player1.wins}`);
+    scoreP2.innerHTML = (`Games won:${player2.wins}`);
+    scoreP3.innerHTML = (`Games won:${player3.wins}`);
+    scoreP4.innerHTML = (`Games won:${player4.wins}`);
     let worldChamp = document.getElementById('worldChamp');
-    if (worldChamp) {
-        worldChamp.innerHTML = (`${champion.name} is the world champion!`);
-    }
+    worldChamp.innerHTML = (`${champion.name} is the world champion!`);
     return champion;
 }
 player1.name = 'Hampter Bampter';
@@ -93,11 +83,8 @@ player2.name = 'Glam Sally';
 player3.name = 'Sweeaboo';
 player4.name = 'Monito';
 let buttonPlay = document.getElementById('buttonPlay');
-if (buttonPlay) {
-    buttonPlay.style.height = '35px';
-    buttonPlay.style.width = '125px';
-    buttonPlay.addEventListener('click', function () {
-        playTournament(player1, player2, player3, player4, 5);
-    });
-}
-;
+buttonPlay.style.height = '35px';
+buttonPlay.style.width = '125px';
+buttonPlay.addEventListener('click', function () {
+    playTournament(player1, player2, player3, player4, 5);
+});
